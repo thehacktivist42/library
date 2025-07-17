@@ -1,4 +1,3 @@
-
 let dummyBook = new Book(
     "The Fault in our Stars",
     2014,
@@ -7,7 +6,7 @@ let dummyBook = new Book(
     "Read"
 )
 
-const myLibrary = [dummyBook];
+const myLibrary = [];
 let container = document.querySelector(".container");
 let newBookContainer = document.querySelector(".new-book-container");
 let newBookDialog = document.querySelector('.new-book-dialog');

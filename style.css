@@ -12,3 +12,11 @@
     height: 200px;
     border-radius: 15px;
 }
+.new-book-button {
+    background-color: #1193d6;
+    border-radius: 50px;
+    color: #fff;
+    border-style: none;
+    font-size: 1.7vh;
+    padding: 1vw 3vw;
+}

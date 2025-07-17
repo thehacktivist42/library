@@ -42,3 +42,6 @@ function displayAllBooks(library) {
 
 displayAllBooks(myLibrary);
 
+function addNewBook() {
+    
+}

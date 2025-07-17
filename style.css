@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-#new-book-button, #submit-button {
+#new-book-button, #submit-button, #status-button {
     margin: 16px;
     background-color: #1193d6;
     border-radius: 50px;
@@ -29,7 +29,7 @@
     font-size: 1.7vh;
     padding: 1vw 3vw;
 }
-#submit-button {
+#submit-button, #status-button {
     margin-left: 0;
 }
 .book-title {
@@ -60,6 +60,7 @@ dialog {
     box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.3);
     border-color: white;
     border-radius: 8px;
+    min-width: 30vw;
 }
 fieldset {
     border-radius: 8px;
@@ -75,4 +76,16 @@ fieldset {
 }
 .unknown {
     border-left: 7px solid #ff9d00;
+}
+.status-Read {
+    color: #1ab10c;
+}
+.status-Not {
+    color: #bd0a0a;
+}
+.status-Reading {
+    color: #6495ed;
+}
+.status-Unknown {
+    color: #ff9d00;
 }

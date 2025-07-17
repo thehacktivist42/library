@@ -10,7 +10,8 @@ let dummyBook = new Book(
 const myLibrary = [dummyBook];
 let container = document.querySelector(".container");
 let newBookContainer = document.querySelector(".new-book-container");
-let newBookDialog = document.querySelector('dialog');
+let newBookDialog = document.querySelector('.new-book-dialog');
+let changeStatusDialog = document.querySelector('.status-change');
 
 function Book(title, year, author, description, status) {
     this.id = crypto.randomUUID();
@@ -47,7 +48,7 @@ function displayBook(book) {
             ${book.title}
         </div>
         <div class = "book-status">
-            <b>Status:</b> ${book.status}
+            <b>Status:</b> <a class = "status-${book.status}">${book.status}</a> &nbsp•&nbsp <a class = "change-status" onclick = "changeStatus('${book.id}')">Change</a>
         </div>
         <br>
         <div class = "book-author">
@@ -84,6 +85,8 @@ function NewBook() {
 
 const submitButton = document.querySelector('#submit-button');
 submitButton.addEventListener('click', addNewBook, false);
+const statusButton = document.querySelector('#status-button');
+statusButton.addEventListener('click', (book) => submitStatus(book), false);
 
 function addNewBook(event) {
     event.preventDefault();
@@ -101,10 +104,11 @@ function addNewBook(event) {
 
 function closeDialog() {
     newBookDialog.close();
+    changeStatusDialog.close();
 }
 
-function getStatus() {
-    const radioButtons = document.getElementsByName("status");
+function getStatus(radioName = "status") {
+    const radioButtons = document.getElementsByName(radioName);
     let status = "Unknown"
     for (let i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked) {
@@ -113,4 +117,31 @@ function getStatus() {
         }
     }
     return status;
+}
+
+let currentBook = null;
+
+function changeStatus(id) {
+    currentBook = myLibrary.find(b => b.id === id);
+    if (!currentBook) return;
+    changeStatusDialog.showModal();
+    document.querySelector(".change-status-title").innerHTML = `Change status for <i>${currentBook.title}</i>`;
+    const radios = changeStatusDialog.querySelectorAll('input[name="change-status"]');
+    radios.forEach(radio => {
+        radio.checked = (radio.value === currentBook.status);
+    });
+}
+
+const statusForm = changeStatusDialog.querySelector('form');
+statusForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    submitStatus();
+});
+
+function submitStatus() {
+    if (!currentBook) return;
+    let status = getStatus("change-status");
+    currentBook.status = status;
+    displayAllBooks(myLibrary);
+    changeStatusDialog.close();
 }

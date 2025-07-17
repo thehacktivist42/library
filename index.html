@@ -12,7 +12,7 @@
         <button id="new-book-button" onclick = "NewBook()">
             New Book
         </button>
-        <dialog>
+        <dialog class = "new-book-dialog">
             <div class="dialog-top">
                 <h2>Add New Book</h2>
                 <button class="close-dialog" onclick = "closeDialog()">
@@ -64,5 +64,29 @@
     <div class="container">
         
     </div>
+    <dialog class = "status-change">
+        <div class="dialog-top">
+            <h2 class = "change-status-title">Change Status</h2>
+            <button class="close-dialog" onclick = "closeDialog()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close</title><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+            </button>
+        </div>
+        <form action = "dialog">
+            <fieldset>
+                <legend>
+                    Status
+                </legend>
+                <input type="radio" name="change-status" class="change-status" id = "read" value = "Read">
+                <label for="read">Read</label>
+                <input type="radio" name="change-status" class="change-status" id = "not-read" value = "Not Read">
+                <label for="read">Not Read</label>
+                <input type="radio" name="change-status" class="change-status" id = "reading" value = "Reading">
+                <label for="read">Reading</label>
+            </fieldset>
+            <button type="submit" id="status-button">
+                Submit
+            </button>
+        </form>
+    </dialog>
 </body>
 </html>

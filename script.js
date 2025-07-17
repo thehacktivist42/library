@@ -1,3 +1,11 @@
+/*
+let dummyBook = new Book(
+    "The Fault in our Stars",
+    2014,
+    "John Green",
+    "Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten."
+)
+*/
 const myLibrary = [];
 let container = document.querySelector(".container");
 let newBookContainer = document.querySelector(".new-book-container");
@@ -19,20 +27,24 @@ function displayBook(book) {
     let newBook = document.createElement("div");
     newBook.classList.add("book");
     newBook.innerHTML = `
-    <div class = "book-title">
-        ${book.title}
+    <div class = "book-container">
+        <div class = "book-title">
+            ${book.title}
+        </div>
+        <div class = "book-author">
+            <b>Author:</b> ${book.author}
+        </div>
+        <div class = "book-year">
+            <b>Release Year:</b> ${book.year}
+        </div>
+        <br>
+        <div class = "book-description">
+            ${book.description}
+        </div>
+        <br>
     </div>
     <div class = "book-id">
-        <b>ID:</b> ${book.id}
-    </div>
-    <div class = "book-author">
-        <b>Author:</b> ${book.author}
-    </div>
-    <div class = "book-year">
-        <b>Release Year:</b> ${book.year}
-    </div>
-    <div class = "book-description">
-        ${book.description}
+        ID: ${book.id}
     </div>
     `
     container.appendChild(newBook);

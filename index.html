@@ -8,9 +8,43 @@
     <title>Library</title>
 </head>
 <body>
-    <button class="new-book-button" onclick = "addNewBook()">
-        New Book
-    </button>
+    <div class="new-book-container">
+        <button id="new-book-button" onclick = "NewBook()">
+            New Book
+        </button>
+        <dialog>
+            <h2>Add New Book</h2>
+            <form action="dialog">
+                <fieldset>
+                    <legend>
+                        Title:
+                    </legend>
+                    <input type="text" name="title" id="title" class="title">
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Author:
+                    </legend>
+                    <input type="text" name="author" id="author" class="author">
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Year of Release:
+                    </legend>
+                    <input type="text" name="year" id="year" class="year">
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Description
+                    </legend>
+                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                </fieldset>
+                <button type="submit" id="submit-button">
+                    Submit
+                </button>
+            </form>
+        </dialog>
+    </div>
     <div class="container">
         
     </div>

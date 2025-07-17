@@ -12,7 +12,7 @@
     height: 200px;
     border-radius: 15px;
 }
-.new-book-button {
+button {
     background-color: #1193d6;
     border-radius: 50px;
     color: #fff;

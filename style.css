@@ -10,7 +10,6 @@
     margin: 16px;
 }
 .book {
-    border-left: 7px solid #6495ed;
     background-color: #fff;
     box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3);
     padding: 30px 20px;
@@ -21,7 +20,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-button {
+#new-book-button, #submit-button {
     margin: 16px;
     background-color: #1193d6;
     border-radius: 50px;
@@ -44,4 +43,36 @@ button {
     font-size: 0.7em;
     font-style: italic;
     color:gray;
+}
+.dialog-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close-dialog > svg {
+    width: 25px;
+}
+.close-dialog {
+    border-style: none;
+    background: none;
+}
+dialog {
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.3);
+    border-color: white;
+    border-radius: 8px;
+}
+fieldset {
+    border-radius: 8px;
+}
+.reading {
+    border-left: 7px solid #6495ed;
+}
+.read {
+    border-left: 7px solid #1ab10c;
+}
+.not-read {
+    border-left: 7px solid #bd0a0a;
+}
+.unknown {
+    border-left: 7px solid #ff9d00;
 }
